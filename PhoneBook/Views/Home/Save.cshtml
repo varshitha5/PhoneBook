@@ -1,0 +1,39 @@
+﻿@model IEnumerable<PhoneBook.Models.Data>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Save</title>
+</head>
+<body>
+    <div>
+        @foreach (var contact in @Model)
+        {
+            <table border="1">
+                <tr>
+                    <td>@contact.Name</td>  
+                    <td>@contact.Address1</td>  
+                    <td> @contact.Address2  </td>
+                    <td>@contact.City</td> 
+                    <td>@contact.Pincode</td>  
+                    <td> @contact.Phonenumber</td> 
+
+
+                </tr>
+            </table>
+        }
+
+    </div>
+    
+    <div>
+
+        <input type="button" value="Cancel" onclick="@("window.location.href='"+@Url.Action("GoToHome","Home")+"'");" />
+
+    </div>
+</body>
+</html>
